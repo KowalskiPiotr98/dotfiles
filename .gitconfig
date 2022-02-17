@@ -1,0 +1,18 @@
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[user]
+	name = Piotr Kowalski
+	email = xxxxxx@xxx.x
+	signingkey = <long_key_id>
+[core]
+	editor = nvim
+	autocrlf = false
+	pager = delta
+[commit]
+	gpgsign = true

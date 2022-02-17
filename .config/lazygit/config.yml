@@ -1,0 +1,21 @@
+customCommands:
+  - key: "b"
+    command: "git remote prune origin"
+    context: "remotes"
+    loadingText: "Pruning..."
+    description: "prune deleted remote branches"
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never -n --keep-plus-minus-markers
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+  showRandomTip: false
+  showCommandLog: false
+notARepository: 'skip'
+os:
+  openCommand: 'nvim {{filename}}'
