@@ -35,6 +35,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id synology-drive
+#multiple screens setup, please customise
+#exec --no-startup-id "xrandr --output HDMI-1 --left-of eDP-1"
+exec --no-startup-id "xset -dpms"
+exec --no-startup-id "ssh-agent"
+exec --no-startup-id "ssh-add"
+exec --no-startup-id xautolock -time 5 -locker "i3lock -f -c 000000 && xset dpms force standby"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -112,7 +118,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "daily"
+set $ws1 "1: daily"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
@@ -148,7 +154,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+space exec "rofi -show drun"
-bindsym $mod+x exec --no-startup-id i3lock -f
+bindsym $mod+x exec --no-startup-id "i3lock -f -c 000000 && xset dpms force standby"
 focus_follows_mouse no
 
 # reload the configuration file
