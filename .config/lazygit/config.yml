@@ -12,6 +12,8 @@ gui:
   theme:
     selectedLineBgColor:
       - reverse
+    unstagedChangesColor:
+      - blue
     selectedRangeBgColor:
       - reverse
   showRandomTip: false
