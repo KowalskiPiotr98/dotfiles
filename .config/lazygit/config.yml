@@ -18,6 +18,11 @@ customCommands:
     command: "glab mr create --draft -b main --remove-source-branch -t \"{{index .PromptResponses 0}}\" -a sha512sum"
     subprocess: true
     description: "Create draft merge request from current branch"
+  - key: "M"
+    command: "git diff --name-only {{.SelectedLocalCommit.Sha}}"
+    context: "commits"
+    subprocess: true
+    description: "See files modified since commit"
   - key: "O"
     context: "localBranches"
     prompts:
