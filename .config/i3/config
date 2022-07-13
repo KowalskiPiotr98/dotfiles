@@ -40,7 +40,7 @@ exec --no-startup-id synology-drive
 exec --no-startup-id "xset -dpms"
 exec --no-startup-id "ssh-agent -a /home/piotr/.ssh-agent.sock"
 exec --no-startup-id "ssh-add"
-exec --no-startup-id xautolock -time 5 -locker "i3lock -f -c 000000 && xset dpms force off"
+exec --no-startup-id xautolock -notify 10 -time 5 -locker "i3lock -f -c 000000 && xset dpms force off"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
