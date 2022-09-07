@@ -10,28 +10,22 @@ customCommands:
     loadingText: "Absorbing changes..."
     subprocess: true
     description: "Absorb changed files into past commits"
-  - key: "o"
-    context: "localBranches"
-    prompts:
-      - type: 'input'
-        title: 'Title'
-    command: "glab mr create --draft -b main --remove-source-branch -t \"{{index .PromptResponses 0}}\" -a sha512sum"
-    subprocess: true
-    description: "Create draft merge request from current branch"
   - key: "M"
-    command: "git diff --name-only {{.SelectedLocalCommit.Sha}}"
+    command: "git diff --name-only {{.SelectedLocalCommit.Sha}} && read -n1"
     context: "commits"
     subprocess: true
     description: "See files modified since commit"
-  - key: "O"
-    context: "localBranches"
+  - key: "R"
+    context: "tags"
     prompts:
       - type: 'input'
-        title: 'Title (creating non-draft merge request)'
-    command: "glab mr create -b main --remove-source-branch -t \"{{index .PromptResponses 0}}\" -a sha512sum"
+        title: 'version'
+      - type: 'input'
+        title: 'changelog file'
+        initialValue: '/home/piotr/temp/changelog'
+    command: "glab release create {{index .PromptResponses 0}} -r main -F \"{{index .PromptResponses 1}}\""
     subprocess: true
-    description: "Create draft merge request from current branch"
-
+    description: "Create new release from main branch"
 git:
   paging:
     colorArg: always
@@ -40,12 +34,16 @@ gui:
   theme:
     selectedLineBgColor:
       - reverse
-    selectedRangeBgColor:
-      - reverse
     unstagedChangesColor:
       - blue
+    selectedRangeBgColor:
+      - reverse
   showRandomTip: false
   showCommandLog: false
+  showBottomLine: false
+  showIcons: true
 notARepository: 'skip'
 os:
   openCommand: 'nvim {{filename}}'
+promptToReturnFromSubprocess: false
+

@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo freshclam
-sudo clamscan --infected --recursive --exclude-dir="^/sys" /

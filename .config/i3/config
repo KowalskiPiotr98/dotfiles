@@ -35,11 +35,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id synology-drive
-#multiple screens setup, please customise
-#exec --no-startup-id "xrandr --output HDMI-1 --left-of eDP-1"
-exec --no-startup-id "xset -dpms"
+exec --no-startup-id "xrandr --output eDP-1-0 --mode 2560x1440 --rate 165.00 --primary"
+exec --no-startup-id "xrandr --output HDMI-0 --left-of eDP-1-0 --mode 1920x1080 --rate 143.98"
+exec --no-startup-id "xset dpms 0 0 330"
 exec --no-startup-id "ssh-agent -a /home/piotr/.ssh-agent.sock"
-exec --no-startup-id "ssh-add"
+#exec --no-startup-id "ssh-add"
+exec --no-startup-id "protonmail-bridge --no-window"
 exec --no-startup-id xautolock -notify 10 -time 5 -locker "i3lock -f -c 000000 && xset dpms force off"
 
 # Use pactl to adjust volume in PulseAudio.
@@ -53,7 +54,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+q kill
@@ -132,14 +133,18 @@ set $ws10 "10"
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
+bindsym $mod+Mod1+h workspace number $ws2
 bindsym $mod+3 workspace number $ws3
+bindsym $mod+Mod1+j workspace number $ws3
 bindsym $mod+4 workspace number $ws4
+bindsym $mod+Mod1+k workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+Mod1+l workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -152,6 +157,8 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+workspace $ws1 output eDP-1-0
 
 bindsym $mod+space exec "rofi -show drun"
 bindsym $mod+x exec --no-startup-id "i3lock -f -c 000000 && xset dpms force off"
@@ -206,6 +213,7 @@ hide_edge_borders smart
 
 bar {
   position top
+  tray_output HDMI-0
   status_command i3status --config ~/.config/i3/i3status.conf
 }
 # Start i3bar to display a workspace bar (plus the system information i3status

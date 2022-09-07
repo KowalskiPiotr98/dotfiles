@@ -8,10 +8,10 @@
     colorMoved = default
 [user]
 	name = Piotr Kowalski
-	email = xxxxxx@xxx.x
-	signingkey = <long_key_id>
+	email = piotr@pkowalski.net
+	signingkey = 4D875B9404957208
 [core]
-	editor = nvim
+	editor = /snap/bin/nvim
 	autocrlf = false
 	pager = delta
 [commit]
