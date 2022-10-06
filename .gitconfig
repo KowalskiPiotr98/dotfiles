@@ -11,7 +11,7 @@
 	email = piotr@pkowalski.net
 	signingkey = 4D875B9404957208
 [core]
-	editor = /snap/bin/nvim
+	editor = nvim
 	autocrlf = false
 	pager = delta
 [commit]
