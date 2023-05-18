@@ -6,4 +6,3 @@ set smartcase
 set number
 set relativenumber
 set visualbell
-

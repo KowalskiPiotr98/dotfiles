@@ -1,0 +1,20 @@
+cmd + alt + ctrl - q : yabai -m config layout bsp
+
+cmd - b : yabai -m window --minimize
+cmd - q : yabai -m window --close
+cmd - d : yabai -m window --toggle native-fullscreen || yabai -m window --toggle zoom-fullscreen
+
+cmd - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+alt + ctrl - h : yabai -m window --warp west
+alt + ctrl - j : yabai -m window --warp south
+alt + ctrl - k : yabai -m window --warp north
+alt + ctrl - l : yabai -m window --warp east
+
+alt + cmd - h : yabai -m window --swap west
+alt + cmd - j : yabai -m window --swap south
+alt + cmd - k : yabai -m window --swap north
+alt + cmd - l : yabai -m window --swap east

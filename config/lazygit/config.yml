@@ -41,9 +41,9 @@ gui:
   showRandomTip: false
   showCommandLog: false
   showBottomLine: false
-  showIcons: true
+  showIcons: false
 notARepository: 'skip'
 os:
-  openCommand: 'nvim {{filename}}'
+  open: 'nvim {{filename}}'
 promptToReturnFromSubprocess: false
 
