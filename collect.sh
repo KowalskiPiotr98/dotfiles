@@ -10,3 +10,4 @@ cp ~/.vimrc vimrc
 cp ~/.ideavimrc ideavimrc
 cp ~/.gitconfig gitconfig
 cp ~/.skhdrc skhdrc
+cp /Library/LaunchDaemons/ssh-brew.plist ssh-brew.plist
