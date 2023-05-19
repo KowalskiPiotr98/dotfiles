@@ -1,5 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    set -gx SSH_AUTH_SOCK "/Users/piotr/.ssh/agent"
+    set -gx EDITOR nvim
 end
 
 alias v='nvim'
