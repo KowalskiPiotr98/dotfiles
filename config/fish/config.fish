@@ -7,7 +7,7 @@ end
 alias v='nvim'
 alias cat='bat'
 alias ls='exa'
-alias d='sudo docker compose'
+alias d='docker compose'
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
