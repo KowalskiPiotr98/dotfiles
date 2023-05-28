@@ -42,6 +42,7 @@ gui:
   showCommandLog: false
   showBottomLine: false
   showIcons: false
+  autoFetch: false
 notARepository: 'skip'
 os:
   open: 'nvim {{filename}}'
