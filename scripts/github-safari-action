@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# heavily inspired by https://github.com/peppy/dotfiles/blob/db143c9087b4405e7c8fb06587a2dd216c40389e/scripts/executable_github-safari-action
+# Thanks, Peppy!
+
+url=`/opt/homebrew/bin/safari-ctl`
+repo=`echo $url | sed -e 's,https://github.com/[^/]*/\([^/]*\).*,\1,g'`
+
+cd ~/code/$repo/
+
+choice=`printf "checkout\nautomerge\nforce merge\n \n# operating on\n# repo: $repo\n# URL: $url" | choose -i`
+
+case "$choice" in
+    0)
+        # checkout PR
+        gh pr checkout $url
+        ;;
+    1)
+        # automerge
+        gh pr merge $url --auto -m
+        ;;
+    2)
+        # force merge
+        gh pr merge $url --merge --disable-auto
+        gh pr merge $url --merge --admin
+        ;;
+    3)
+        eval "$(gh pr view $url --json "title,url" | jq -r '@sh "title=\(.title)", @sh "url=\(.url)"')"
+        echo "- [ ] $title ($url)" | pbcopy
+esac
