@@ -30,7 +30,6 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never -n --keep-plus-minus-markers
-  autoFetch: false
 gui:
   theme:
     selectedLineBgColor:

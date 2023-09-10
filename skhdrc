@@ -1,6 +1,5 @@
 cmd + alt + ctrl - q : yabai -m config layout bsp
 
-cmd - b : yabai -m window --minimize
 cmd - q : yabai -m window --close
 cmd - d : yabai -m window --toggle native-fullscreen || yabai -m window --toggle zoom-fullscreen
 
