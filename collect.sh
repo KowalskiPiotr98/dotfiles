@@ -10,6 +10,5 @@ cp ~/.vimrc vimrc
 cp ~/.ideavimrc ideavimrc
 cp ~/.gitconfig gitconfig
 cp ~/.skhdrc skhdrc
-cp ~/Library/LaunchAgents/ssh.agent.plist ssh.agent.plist
 cp -r ~/.config/scripts ./scripts
 cp ~/.yabairc yabairc
