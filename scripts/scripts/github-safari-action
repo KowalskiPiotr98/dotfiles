@@ -6,7 +6,7 @@
 url=`/opt/homebrew/bin/safari-ctl`
 repo=`echo $url | sed -e 's,https://github.com/[^/]*/\([^/]*\).*,\1,g'`
 
-cd ~/code/$repo/
+#cd ~/code/$repo/
 
 choice=`printf "checkout\nautomerge\nforce merge\n \n# operating on\n# repo: $repo\n# URL: $url" | choose -i`
 

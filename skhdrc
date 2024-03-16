@@ -3,10 +3,10 @@ cmd + alt + ctrl - q : yabai -m config layout bsp
 ctrl - q : yabai -m window --close
 ctrl - f : yabai -m window --toggle native-fullscreen || yabai -m window --toggle zoom-fullscreen
 
-lalt - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-lalt - j : yabai -m window --focus south
-lalt - k : yabai -m window --focus north
-lalt - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ctrl - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+ctrl - j : yabai -m window --focus south
+ctrl - k : yabai -m window --focus north
+ctrl - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 alt + ctrl - h : yabai -m window --warp west
 alt + ctrl - j : yabai -m window --warp south
@@ -20,4 +20,4 @@ alt + cmd - l : yabai -m window --swap east
 
 ctrl - p : ~/.config/scripts/github-safari-action
 
-lalt - c : pbcopy < /dev/null
+alt + cmd - c : pbcopy < /dev/null

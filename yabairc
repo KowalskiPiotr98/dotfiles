@@ -1,3 +1,4 @@
 yabai -m rule --add title="JetBrains Toolbox" manage=off mouse_follows_focus=off
 yabai -m rule --add app="System Preferences" manage=off
 yabai -m rule --add app="choose" manage=off mouse_follows_focus=off
+yabai -m rule --add app="Stats" manage=off mouse_follows_focus=off
