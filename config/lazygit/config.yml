@@ -26,10 +26,10 @@ customCommands:
     command: "glab release create {{index .PromptResponses 0}} -r main -F \"{{index .PromptResponses 1}}\""
     subprocess: true
     description: "Create new release from main branch"
-git:
+ngit:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never -n --keep-plus-minus-markers
+    pager: delta --paging=never -n --keep-plus-minus-markers
 gui:
   theme:
     selectedLineBgColor:

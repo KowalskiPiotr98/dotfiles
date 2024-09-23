@@ -8,8 +8,8 @@
     colorMoved = default
 [user]
 	name = Piotr Kowalski
-	email = piko98@proton.me
-	signingkey = DFC900F529A59AE6
+	email = piotr.98@icloud.com
+	signingkey = 02DA9F7B9F06744ED9376E99B4E536DCA7BB85AB
 [core]
 	editor = nvim
 	autocrlf = false
