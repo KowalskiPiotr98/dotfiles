@@ -18,6 +18,4 @@ alt + cmd - j : yabai -m window --swap south
 alt + cmd - k : yabai -m window --swap north
 alt + cmd - l : yabai -m window --swap east
 
-ctrl - p : ~/.config/scripts/github-safari-action
-
 alt + cmd - c : pbcopy < /dev/null

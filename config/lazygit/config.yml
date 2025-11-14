@@ -8,13 +8,13 @@ customCommands:
     command: "git absorb --and-rebase"
     context: "commits"
     loadingText: "Absorbing changes..."
-    subprocess: true
     description: "Absorb changed files into past commits"
+    output: terminal
   - key: "M"
     command: "git diff --name-only {{.SelectedLocalCommit.Sha}} && read -n1"
     context: "commits"
-    subprocess: true
     description: "See files modified since commit"
+    output: terminal
   - key: "R"
     context: "tags"
     prompts:
@@ -24,8 +24,8 @@ customCommands:
         title: 'changelog file'
         initialValue: '/home/piotr/temp/changelog'
     command: "glab release create {{index .PromptResponses 0}} -r main -F \"{{index .PromptResponses 1}}\""
-    subprocess: true
     description: "Create new release from main branch"
+    output: terminal
 ngit:
   paging:
     colorArg: always
@@ -46,4 +46,3 @@ notARepository: 'skip'
 os:
   open: 'nvim {{filename}}'
 promptToReturnFromSubprocess: false
-
